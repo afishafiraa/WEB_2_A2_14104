@@ -23,6 +23,6 @@ Route::get('/member', function () {
     return view('member');
 });
 
-Route::resource('member','14104_web');
+Route::resource('member','Web');
 
 ?>

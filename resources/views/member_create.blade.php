@@ -7,7 +7,7 @@
             <!-- Remove This Before You Start -->
             <h1>Tambah Member</h1>
             <hr>
-            <form action="{{ route('14104_web.store') }}" method="post">
+            <form action="{{ route('Web.store') }}" method="post">
                 {{ csrf_field() }}
 				<div class="form-group">
                     <label for="nama_barang">Nama Member:</label>

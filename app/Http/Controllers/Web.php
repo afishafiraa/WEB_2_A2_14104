@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\14104_model_mahasiswa;
+use App\model_mahasiswa;
 
 
-class 14104_web extends Controller
+class Web extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class 14104_web extends Controller
      */
     public function index()
     {
-        $data = 14104_model_mahasiswa::all();
-		return view('14104_model_mahasiswa',compact('data'));
+        $data = model_mahasiswa::all();
+		return view('member',compact('data'));
     }
 
     /**
@@ -37,13 +37,13 @@ class 14104_web extends Controller
      */
     public function store(Request $request)
     {
-        $data = new 14104_model_mahasiswa();
+        $data = new model_mahasiswa();
 		$data->name = $request->name;
 		$data->email = $request->email;
 		$data->password = $request->password;
 		$data->macAddress = $request->macAddress;
 		$data->save();
-			return redirect()->route('14104_web.index')->with('alert-success','Berhasil Menambahkan Data!');
+			return redirect()->route('member.index')->with('alert-success','Berhasil Menambahkan Data!');
     }
 
     /**
